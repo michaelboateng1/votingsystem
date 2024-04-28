@@ -1,0 +1,336 @@
+.candidates-form {
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  // position: relative;
+
+  .prefects-card {
+    width: 90vw;
+    margin: auto;
+    border: 2px solid $SECONDARY-COLOR;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    @include mediaq(1440px) {
+      width: 95vw;
+    }
+
+    .position-title {
+      display: grid;
+      place-content: center;
+      background-color: $SECONDARY-COLOR;
+      color: $COLOR-WHITE;
+      padding: 15px;
+      font-size: 1.6rem;
+      border-radius: 5px 5px 0 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .candidates-container {
+      padding: 0px 30px 30px 30px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 450px;
+      background-color: $COLOR-WHITE;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      // box-shadow: inset 0 0 6px $SHADOW-COLOR;
+      @include mediaq(1440px) {
+        grid-template-columns: repeat(4, 1fr);
+        height: 75vh;
+      }
+
+      .candidate {
+        margin: 40px 20px;
+        position: relative;
+        height: 240px;
+        cursor: pointer;
+        border-radius: 5px;
+        @include mediaq(1440px) {
+          margin: 2vw;
+        }
+
+        &:hover .image img {
+          transform: scale(1.08);
+        }
+
+        .image {
+          border: 2px solid $BORDER-COLOR;
+          border-radius: 5px 5px 0 0;
+          overflow: hidden;
+          img {
+            transition: 0.3s ease-in-out;
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+
+        .candidate-name {
+          // text-align: center;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 10px 15px;
+          font-size: 1rem;
+          border: 2px solid $BORDER-COLOR;
+          border-radius: 0 0 5px 5px;
+          border-top: none;
+          background-color: hsla(0, 0%, 100%, 0.3);
+
+          h3 {
+            font-family: "Poppins", sans-serif;
+          }
+
+          input {
+            cursor: pointer;
+            font-size: inherit;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .candidate-number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: $BORDER-COLOR;
+          border-radius: 5px 0 0 0;
+          padding: 10px;
+          font-size: 1.5rem;
+          color: $COLOR-WHITE;
+          font-weight: 600;
+          font-family: "Teko", sans-serif;
+        }
+      }
+    }
+
+    .next-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      border-top: 2px solid $SECONDARY-COLOR;
+      background-color: $COLOR-WHITE;
+      border-radius: 0 0 10px 10px;
+
+      .nav ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .number-tab {
+          list-style-type: none;
+          font-family: "Teko", sans-serif;
+
+          a {
+            text-decoration: none;
+            color: $COLOR-WHITE;
+            margin: 0 0 0 20px;
+            background-color: $CODE-COLOR;
+            padding: 10px 15px;
+            border-radius: 5px;
+            position: relative;
+            font-family: inherit;
+            font-size: 1.1rem;
+          }
+        }
+
+        .number-tab:hover {
+          filter: brightness(70%);
+        }
+      }
+
+      button {
+        padding: 15px 20px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color: $SECONDARY-COLOR;
+        color: $COLOR-WHITE;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        filter: brightness(80%);
+      }
+
+      .next {
+        font-family: "Lemon", serif;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.back {
+  margin-left: auto;
+  margin-right: 20px;
+  cursor: pointer !important;
+  visibility: hidden;
+  font-family: "Lemon", serif;
+  font-weight: bold;
+}
+
+.choosen-prefects {
+  padding: 30px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 450px;
+  width: 100%;
+  background-color: $COLOR-WHITE;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: inset 0 0 6px $SHADOW-COLOR;
+
+  @include mediaq(1440px) {
+    height: 75vh;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .prefect-review {
+    padding: 10px 20px;
+
+    .prefect-position {
+      padding: 10px 20px;
+      background-color: $SECONDARY-COLOR;
+      border-radius: 5px;
+      color: $COLOR-WHITE;
+      font-weight: 700;
+      margin: 15px 0;
+      text-align: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .candidate-review {
+      pointer-events: none;
+      .image {
+        border-radius: 5px;
+        img {
+          border: 2px solid $YELLOW-COLOR;
+          border-radius: 5px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: drop-shadow(2px 4px 3px rgba(51, 51, 51, 0.5));
+        }
+      }
+
+      .candidate-name {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+// body {
+//   height: 100vh;
+//   // background: url(../images/favicons/KSTS.png);
+//   background-color: orange;
+//   background: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(../../images/favicons/KSTS.png) center round fixed;
+// }
+
+// MODAL
+.modal-background {
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+
+  .modal-container {
+    background-color: $COLOR-WHITE;
+    padding: 0 10px 10px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    animation: animateModal 0.5s ease-in-out;
+
+    .close-section {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      div {
+        flex: 2 2 100px;
+      }
+
+      .close {
+        padding: 10px;
+        font-size: 1.5rem;
+        flex: 0 1 20px;
+
+        &:hover {
+          color: $COLOR-RED;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .modal-text-container {
+      padding: 10px;
+      font-family: "Poppins", sans-serif;
+      p {
+        padding: 0 5px 15px 5px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: inherit;
+      }
+    }
+  }
+
+  .not-vote {
+    width: 30%;
+    height: 20%;
+  }
+}
+
+@keyframes animateModal {
+  from {
+    transform: translate(-50%, -1000%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+// LOADING
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  background-color: $PRIMARY-COLOR;
+}
+
+// transform: translate(-50%, -75%);
+// transform: translate(-50%, -1000%);
+// transform: translate(1000%, -75%);

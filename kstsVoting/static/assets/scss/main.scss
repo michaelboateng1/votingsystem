@@ -1,0 +1,43 @@
+@import "_config";
+@import "_login";
+@import "_header";
+@import "_candidates";
+@import "_animations";
+@import "_results_dashboard";
+@import "_votedmessage";
+
+/* BROWSER RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  // scroll-margin-top: 50px;
+}
+
+::selection {
+  background-color: $SELECTION-COLOR;
+  color: $COLOR-BLACK;
+}
+
+img {
+  display: block;
+}
+
+/* UTILITIES SETTINGS */
+.offscreen {
+  position: absolute;
+  right: 10000%;
+}
+
+.center {
+  text-align: center;
+}
+
+// GENERAL STYLE
+body,
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}

@@ -1,0 +1,571 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting Site | Girls Candidates</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="{% static '/assets/images/favicons/KSTS.png' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static '/assets/images/favicons/KSTS.png' %}" />
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="{% static '/assets/dist/css/main.min.css' %}" />
+
+    <!-- GOOGLEFONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- FONTAWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="top-titles">
+        <h1 class="header-title">Total number of voters: {{voters_number}}</h1>
+        <h2 class="year"></h2>
+      </div>
+    </header>
+
+    <main class="main">
+      <article>
+        <h3 class="offscreen">Candidates</h3>
+        <section>
+          <h3 class="offscreen">Vote for your candidate</h3>
+          <form action="{% url 'home' %}" method="post" class="candidates-form">
+            {% csrf_token %}
+            <!-- || SCHOOL PREFECT (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">School Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- ELIZABETH GEMFUAH -->
+                <section class="results-container" id="elizabethGemfuah">
+                  <div class="candidates-name">
+                    <h3>Elizabeth Gemfuah</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}" alt="Elizabeth Gemfuah" />
+                  </figure>
+                  <div class="results">
+                    <p class="votes">{{Elizabeth_Gemfuah}} Votes</p>
+                    <p class="percentage">{{Elizabeth_Gemfuah_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- MAVIS AGYEMANG -->
+                <section class="results-container" id="mavisAgyemang">
+                  <div class="candidates-name">
+                    <h3>Mavis Agyemang</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}" alt="Mavis Agyemang" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Mavis_Agyemang}} Votes</p>
+                    <p class="percentage">{{Mavis_Agyemang_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- JUDITH ATIAKOH -->
+                <section class="results-container" id="judithAtiakoh">
+                  <div class="candidates-name">
+                    <h3>Judith Atiakoh</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}" alt="Judith Atiakoh" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Judith_Atiakoh}} Votes</p>
+                    <p class="percentage">{{Judith_Atiakoh_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="next-results" id="GirlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || COMPOUND OVERSEAR (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">Compound Oversear (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- ABIGIEL BONSU -->
+                <section class="results-container" id="abigirlBonsu">
+                  <div class="candidates-name">
+                    <h3>Abigirl Bonsu</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Abigirl Bonsu" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Abigirl_Bonsu}} Votes</p>
+                    <p class="percentage">{{Abigirl_Bonsu_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- PRISCILLA ABU -->
+                <section class="results-container" id="priscillaAbu">
+                  <div class="candidates-name">
+                    <h3>Priscilla Abu</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Priscilla Abu" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Priscilla_Abu}} Votes</p>
+                    <p class="percentage">{{Priscilla_Abu_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- QEENSTER SARPONG -->
+                <section class="results-container" id="qeensterSarpong">
+                  <div class="candidates-name">
+                    <h3>Qeenster Sarpong</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Qeenster Sarpong" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Qeenster_Sarpong}} Votes</p>
+                    <p class="percentage">{{Qeenster_Sarpong_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || DINING HALL PREFECT -->
+            <section class="prefects-card">
+              <h2 class="position-title">Dining Hall Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- JULIET ANNIEN -->
+                <section class="results-container" id="julietAnnien">
+                  <div class="candidates-name">
+                    <h3>Juliet Annien</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}" alt="Juliet Annien" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Juliet_Annien}} Votes</p>
+                    <p class="percentage">{{Juliet_Annien_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- SALY WHITE -->
+                <section class="results-container" id="salyWhite">
+                  <div class="candidates-name">
+                    <h3>Saly White</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}" alt="Saly White" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Saly_White}} Votes</p>
+                    <p class="percentage">{{Saly_White_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- EMMANUELLA BOATENG -->
+                <section class="results-container" id="emmanuellaBoateng">
+                  <div class="candidates-name">
+                    <h3>Emmanuella Boateng</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}" alt="Emmanuella Boateng" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Emmanuella_Boateng}} Votes</p>
+                    <p class="percentage">{{Emmanuella_Boateng_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+
+                <button type="button" class="next-results" id="compoundPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || LIBRARY PREFECT (Girls)-->
+            <section class="prefects-card">
+              <h2 class="position-title">Library Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- BLESSING KWAKYE -->
+                <section class="results-container" id="blessingKwakye">
+                  <div class="candidates-name">
+                    <h3>Blessing Kwakye</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Blessing Kwakye" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Blessing_Kwakye}} Votes</p>
+                    <p class="percentage">{{Blessing_Kwakye_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- ANNIMA AGYEI ASANTI -->
+                <section class="results-container" id="annimaAgyeiAsanti">
+                  <div class="candidates-name">
+                    <h3>Annima Agyei Asanti</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Annima Agyei Asanti" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Annima_Agyei_Asanti}} Votes</p>
+                    <p class="percentage">{{Annima_Agyei_Asanti_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- NANCY BOATENG -->
+                <section class="results-container" id="nancyBoateng">
+                  <div class="candidates-name">
+                    <h3>Nancy Boateng</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Nancy Boateng" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Nancy_Boateng}} Votes</p>
+                    <p class="percentage">{{Nancy_Boateng_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || HEALTH PREFECT (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">Health Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- JULIET ACHAMPONG -->
+                <section class="results-container" id="julietAchampong">
+                  <div class="candidates-name">
+                    <h3>Juliet Achampong</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Juliet Achampong" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Juliet_Achampong}} Votes</p>
+                    <p class="percentage">{{Juliet_Achampong_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- PRINCESS OFORI -->
+                <section class="results-container" id="princessOfori">
+                  <div class="candidates-name">
+                    <h3>Princess Ofori</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Princess Ofori" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Princess_Ofori}} Votes</p>
+                    <p class="percentage">{{Princess_Ofori_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- PRUDENCE OTI -->
+                <section class="results-container" id="prudenceOti">
+                  <div class="candidates-name">
+                    <h3>Prudence Oti</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Prudence Oti" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Prudence_Oti}} Votes</p>
+                    <p class="percentage">{{Prudence_Oti_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || PROTOCOL PREFECT (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">Protocol Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- ELIZABETH ASAMOAH -->
+                <section class="results-container" id="elizabethAsamoah">
+                  <div class="candidates-name">
+                    <h3>Elizabeth Asamoah</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Elizabeth Asamoah" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Elizabeth_Asamoah}} Votes</p>
+                    <p class="percentage">{{Elizabeth_Asamoah_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- PRECIOUS NKRUMAH -->
+                <section class="results-container" id="preciousNkrumah">
+                  <div class="candidates-name">
+                    <h3>Precious Nkrumah</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Precious Nkrumah" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Precious_Nkrumah}} Votes</p>
+                    <p class="percentage">{{Precious_Nkrumah_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- OLIVIA BOATENG -->
+                <section class="results-container" id="oliviaBoateng">
+                  <div class="candidates-name">
+                    <h3>Olivia Boateng</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Olivia Boateng" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Olivia_Boateng}} Votes</p>
+                    <p class="percentage">{{Olivia_Boateng_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || PREP PREFECT (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">Prep Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- MAGRET ASENTI -->
+                <section class="results-container" id="magretAsanti">
+                  <div class="candidates-name">
+                    <h3>Magret Asanti</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Magret Asanti" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Magret_Asanti}} Votes</p>
+                    <p class="percentage">{{Magret_Asanti_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- ELIZABETH ANTWIWAA -->
+                <section class="results-container" id="elizabethAntwiwaa">
+                  <div class="candidates-name">
+                    <h3>Elizabeth Antwiwaa</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Elizabeth Antwiwaa" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Elizabeth_Antwiwaa}} Votes</p>
+                    <p class="percentage">{{Elizabeth_Antwiwaa_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- GIFTY AFRIYEI -->
+                <section class="results-container" id="giftyAfriyei">
+                  <div class="candidates-name">
+                    <h3>Gifty Afriyei</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Gifty Afriyei" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Gifty_Afriyei}} Votes</p>
+                    <p class="percentage">{{Gifty_Afriyei_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || SPORTS PREFECT (Girls)-->
+            <section class="prefects-card">
+              <h2 class="position-title">Sports Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- CANDYBEL OFORI -->
+                <section class="results-container" id="candybelOfori">
+                  <div class="candidates-name">
+                    <h3>Candybel Ofori</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Candybel Ofori" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Candybel_Ofori}} Votes</p>
+                    <p class="percentage">{{Candybel_Ofori_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- CHRISTIANA ASARE -->
+                <section class="results-container" id="christianaAsare">
+                  <div class="candidates-name">
+                    <h3>Christiana Asare</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Christiana Asare" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Christiana_Asare}} Votes</p>
+                    <p class="percentage">{{Christiana_Asare_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- CINDY AGYEI -->
+                <section class="results-container" id="cindyAgyei">
+                  <div class="candidates-name">
+                    <h3>Cindy Agyei</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Cindy Agyei" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Cindy_Agyei}} Votes</p>
+                    <p class="percentage">{{Cindy_Agyei_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+
+            <!-- || ENTERTAINMENT PREFECT (Girls) -->
+            <section class="prefects-card">
+              <h2 class="position-title">Entertainment Prefect (Girls)</h2>
+
+              <div class="candidates-resulst-wrapper">
+                <!-- YVON BOATENG -->
+                <section class="results-container" id="yvonBoateng">
+                  <div class="candidates-name">
+                    <h3>Yvon Boateng</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Yvon Boateng" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Yvon_Boateng}} Votes</p>
+                    <p class="percentage">{{Yvon_Boateng_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- EMMANUELLA ABOAGYE -->
+                <section class="results-container" id="emmanuellaAboagey">
+                  <div class="candidates-name">
+                    <h3>Emmanuella Aboagey</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Emmanuella Aboagey" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Emmanuella_Aboagey}} Votes</p>
+                    <p class="percentage">{{Emmanuella_Aboagey_p}}%</p>
+                  </div>
+                </section>
+
+                <!-- MAGRET YEBOAH -->
+                <section class="results-container" id="magretYeboah">
+                  <div class="candidates-name">
+                    <h3>Magret Yeboah</h3>
+                  </div>
+                  <figure class="image">
+                    <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Magret Yeboah" />
+                  </figure>
+
+                  <div class="results">
+                    <p class="votes">{{Magret_Yeboah}} Votes</p>
+                    <p class="percentage">{{Magret_Yeboah_p}}%</p>
+                  </div>
+                </section>
+              </div>
+
+              <section class="results-btns">
+                <button type="button" class="back-results">Back</button>
+                <button type="button" class="next-results" id="girlsPrefectsNext">Next</button>
+              </section>
+            </section>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <div class="loading">
+      <h3>LOADING...</h3>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="{% static '/assets/javascript/loader.js' %}"></script>
+    <script src="{% static '/assets/javascript/resultspage.js' %}"></script>
+    <!-- <script src="{% static '/assets/javascript/data/data.js' %}"></script>
+    <script src="{% static '/assets/javascript/addData.js' %}"></script> -->
+  </body>
+</html>

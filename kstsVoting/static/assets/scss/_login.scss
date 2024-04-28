@@ -1,0 +1,144 @@
+/* GENERAL STYLE */
+.body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(../../images/logginBackground/285312517_585203682935657_7.jpg) center/cover no-repeat fixed;
+  filter: saturate(2.1);
+}
+
+/* MAIN */
+.home-main {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 20px;
+  width: 50vw;
+  box-shadow: 2px 4px 5px $COLOR-BLACK;
+  transition: 1s;
+}
+
+.card {
+  .card__details {
+    .card__form {
+      .card__legend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        padding: 10px;
+        font-weight: 500;
+        font-family: "Lemon", serif;
+      }
+
+      .form__fields-btn > button {
+        margin: 20px 0 20px 0;
+        padding: 10px;
+        background-color: $SECONDARY-COLOR;
+        color: $COLOR-WHITE;
+        border: none;
+        border-radius: 5px;
+        font-size: inherit;
+        font-weight: bold;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        filter: saturate(0.7);
+
+        // &:hover {
+        //   box-shadow: 2px 2px 2px $SHADOW-COLOR;
+        // }
+
+        &:active {
+          filter: brightness(120%);
+        }
+      }
+
+      .invalid-code {
+        display: none;
+        background-color: $ERROR-BG;
+        padding: 5px;
+        border-radius: 2px;
+        text-align: center;
+        color: $COLOR-WHITE;
+        font-weight: bolder;
+        border-radius: 3px;
+        font-family: "Poppins", sans-serif;
+      }
+    }
+  }
+}
+
+.form__fields {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .form__fields-title {
+    // font-size: 1rem;
+    // padding: 10px 0 5px 0;
+    // font-weight: bolder;
+    // font-family: "Lemon", serif;
+    display: none;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px ridge $COLOR-BLACK;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+
+    &:focus {
+      box-shadow: inset 2px 2px $SHADOW-COLOR;
+      border-radius: 0;
+    }
+  }
+}
+
+// ANIMATIONS
+.code-error {
+  animation: errorAnimate 0.5s ease-in-out 0s 1 forwards;
+}
+
+#correctCode {
+  animation: codeAnimate 0.5s ease-in-out 0s 1 forwards;
+}
+
+// KEYFRAMES
+@keyframes errorAnimate {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes codeAnimate {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

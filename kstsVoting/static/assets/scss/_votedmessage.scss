@@ -1,0 +1,81 @@
+.voted-message {
+  height: 100vh;
+  background-color: $COLOR-WHITE;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: not-allowed;
+
+  .voted-message_main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    .voted-message_symbol {
+      border: 2px solid $VOTED-COLOR;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      font-size: 2rem;
+      color: $VOTED-COLOR;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .rt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 2px;
+        height: 50px;
+        background-color: $VOTED-COLOR;
+      }
+
+      .lt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 2px;
+        height: 50px;
+        background-color: $VOTED-COLOR;
+      }
+    }
+
+    .message {
+      font-size: 2rem;
+      color: $VOTED-COLOR;
+      padding: 10px;
+      margin: 20px 0;
+      font-family: "Lemon", serif;
+      font-weight: 400;
+    }
+
+    .voted-message_back {
+      text-decoration: none;
+      color: $VOTED-COLOR;
+      padding: 5px 10px;
+      border: 1px solid $VOTED-COLOR;
+      margin-top: 10px;
+      border-radius: 2px;
+      font-family: "Teko", sans-serif;
+    }
+
+    .voted-message_back:hover {
+      color: $COLOR-RED;
+      border-color: $COLOR-RED;
+    }
+
+    .voted-message_back:active {
+      color: $COLOR-RED;
+      border-color: $COLOR-RED;
+    }
+  }
+}
+
+// .voted-message {
+//   background-color: black !important;
+// }

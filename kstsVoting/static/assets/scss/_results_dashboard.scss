@@ -1,0 +1,291 @@
+// .prefects-card .candidates-resulst-wrapper {
+//   height: 400px;
+//   padding: 30px;
+//   background-color: $COLOR-WHITE;
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-template-rows: auto;
+//   overflow-y: scroll;
+//   @include mediaq(1440px) {
+//     grid-template-columns: repeat(4, 1fr);
+//     height: 75vh;
+//   }
+
+//   .results-container {
+//     margin: 20px 20px;
+//     font-family: "Poppins", sans-serif;
+//     .image {
+//       border: 2px solid $BORDER-COLOR;
+//       img {
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+
+//     .candidates-name {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       padding: 10px;
+//       font-size: 1rem;
+//       border-left: 2px solid $BORDER-COLOR;
+//       border-right: 2px solid $BORDER-COLOR;
+//       border-top: 2px solid $BORDER-COLOR;
+//       background-color: $SECONDARY-COLOR;
+//       color: $COLOR-WHITE;
+//       border-radius: 5px 5px 0 0;
+//       font-family: inherit;
+//     }
+
+//     .results {
+//       display: flex;
+//       flex-flow: row nowrap;
+//       justify-content: space-around;
+//       align-items: center;
+//       //   padding: 10px;
+//       // border-top: 2px solid $BORDER-COLOR;
+//       border-bottom: 2px solid $BORDER-COLOR;
+//       border-left: 2px solid $BORDER-COLOR;
+//       border-right: 2px solid $BORDER-COLOR;
+//       background-color: $SECONDARY-COLOR;
+//       color: $COLOR-WHITE;
+//       border-radius: 0 0 5px 5px;
+//       //   margin: 0 20px;
+//       font-family: "Poppins", sans-serif;
+
+//       .votes {
+//         padding: 10px;
+//         font-weight: bold;
+//         font-family: inherit;
+//       }
+
+//       .percentage {
+//         border-left: 2px solid $BORDER-COLOR;
+//         padding: 10px 50px;
+//         font-family: inherit;
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
+
+// .prefects-card .results-btns {
+//   padding: 10px;
+//   background: $COLOR-WHITE;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   border-radius: 0 0 5px 5px;
+//   border-top: 2px solid $SECONDARY-COLOR;
+
+//   .next-results,
+//   .back-results {
+//     padding: 10px 15px;
+//     border: none;
+//     border-radius: 2px;
+//     background-color: $SECONDARY-COLOR;
+//     color: $COLOR-WHITE;
+//     font-weight: bold;
+//     font-family: "Lemon", serif;
+//     font-weight: 300;
+//     cursor: pointer;
+//   }
+
+//   .next-results {
+//     margin-left: 20px;
+//   }
+
+//   .back-results:hover,
+//   .next-results:hover {
+//     filter: brightness(120%);
+//   }
+
+//   .back-results:active,
+//   .next-results:active {
+//     filter: brightness(100%);
+//   }
+// }
+
+// .voted-message {
+//   background-color: black;
+//   display: flex;
+//   flex-flow: column nowrap;
+//   justify-content: center;
+//   align-items: center;
+
+//   .voted-message_main {
+//     .voted-message_symbol {
+//       border: 2px solid gray;
+//       height: 100px;
+//       width: 100px;
+//       border-radius: 50%;
+//       font-size: 1rem;
+//       color: gray;
+//       padding: 10px;
+//     }
+
+//     .message {
+//       font-size: 2rem;
+//       color: gray;
+//       padding: 10px;
+//     }
+
+//     .voted-message_back {
+//       text-decoration: none;
+//       color: black;
+//       padding: 5px 10px;
+//       border: 1px solid #333;
+//     }
+//   }
+// }
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $SECONDARY-COLOR;
+  color: $COLOR-WHITE;
+  position: relative;
+  top: 25px;
+  margin-bottom: 60px;
+
+  .headding-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 36%;
+
+    .logo-wrapper {
+      background-color: hsl(192, 100%, 99%);
+      margin-left: 30px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    figure {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transform: scale(2);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    h1 {
+      margin-left: auto;
+      padding: 10px 20px;
+      font-weight: normal;
+    }
+  }
+
+  .view-results-btn {
+    border: 2px solid $COLOR-WHITE;
+    padding: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+
+    button {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border: none;
+      font-size: 1.1rem;
+      color: $SECONDARY-COLOR;
+      font-weight: 600;
+      cursor: inherit;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
+
+.summry {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100vh - 85px - 50px);
+  padding: 0 20px;
+  display: none;
+  // background-color: green;
+
+  .welcome-message {
+    // background-color: hsl(60, 82%, 94%);
+    background-color: white;
+    color: green;
+    padding: 20px;
+    height: 500px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 2px hsla(0, 0%, 30%, 0.3));
+    flex-shrink: 5;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      padding: 10px;
+    }
+  }
+
+  .vote-info {
+    height: 500px;
+    width: 700px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+
+    .breadcrumb {
+      // background-color: hsl(60, 82%, 94%);
+      background-color: white;
+      margin: 0 20px;
+      filter: drop-shadow(0 0 2px hsla(0, 0%, 30%, 0.3));
+      border-radius: 5px;
+      flex: 1 0;
+
+      .title {
+        border-bottom: 1px solid hsla(0, 0%, 30%, 0.5);
+
+        h3 {
+          padding: 10px 20px;
+          font-size: 0.99rem;
+          text-align: center;
+          // text-transform: capitalize;
+          color: hsl(0, 0%, 20%);
+          font-weight: normal;
+        }
+      }
+
+      .breadcrumb-content {
+        padding: 20px 30px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+body {
+  background-color: hsl(192, 100%, 99%);
+}

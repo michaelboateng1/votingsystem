@@ -1,0 +1,120 @@
+.header {
+  font-family: "Lemon", serif;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  .top-titles {
+    text-align: center;
+    background-color: $SECONDARY-COLOR;
+    color: $COLOR-WHITE;
+    width: 100%;
+    font-family: inherit;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    // .logo-image {
+    //   margin: 0 20px;
+    //   width: 50px;
+    //   height: 50px;
+    //   object-fit: cover;
+
+    //   img {
+    //     border-radius: 10px;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+
+    .year {
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 1.5rem;
+      // margin: 0 auto;
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    // margin-top: 10px;
+    position: relative;
+
+    #progress {
+      width: 100%;
+      height: 24px;
+      border-top: 1px solid $COLOR-BLACK;
+      border-bottom: 1px solid $COLOR-BLACK;
+      display: grid;
+      align-content: center;
+
+      .indicator {
+        background-color: $YELLOW-COLOR;
+        width: 0%;
+        max-width: 100%;
+        height: 22px;
+        display: block;
+        transition: 0.5s;
+        border-radius: 0 10px 10px 0;
+      }
+
+      .squareBorder {
+        border-radius: 0 0 0 0 !important;
+      }
+    }
+
+    .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bolder;
+      font-size: 1rem;
+      color: $SECONDARY-COLOR;
+    }
+  }
+
+  .top-titles > h1 {
+    padding: 10px;
+  }
+
+  .voter-info {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    padding: 20px;
+    border-bottom: 5px solid $SECONDARY-COLOR;
+
+    .voter-image-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 3px $SHADOW-COLOR;
+    }
+
+    .voter-image-container {
+      width: 200px;
+      height: 200px;
+    }
+
+    .voter-info__wrapper {
+      line-height: 1.6;
+      .voter {
+        font-size: 1.2rem;
+        padding: 15px;
+        color: hsl(0, 2%, 54%);
+
+        .voter-info__title {
+          font-weight: 700;
+          color: $SECONDARY-COLOR;
+        }
+      }
+    }
+  }
+}
+
+@mixin mediaq($screenSize) {
+  @media only screen and (min-width: $screenSize) {
+    @content;
+  }
+}
