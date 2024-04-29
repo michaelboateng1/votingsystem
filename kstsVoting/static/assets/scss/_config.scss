@@ -35,3 +35,9 @@ $COLOR-RED: #f00;
 $SELECTION-COLOR: hsla(60, 100%, 50%, 0.5);
 $ERROR-BG: #f00;
 $VOTED-COLOR: #8f2222;
+
+@mixin mediaq($screenSize) {
+  @media only screen and (min-width: $screenSize) {
+    @content;
+  }
+}

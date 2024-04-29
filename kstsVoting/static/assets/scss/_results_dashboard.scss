@@ -286,6 +286,112 @@
   }
 }
 
+.dashboard-main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .results-display {
+    border: 2px solid green;
+    width: 90vw;
+    border-radius: 10px;
+    position: relative;
+
+    .prefects-position {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: green;
+      color: white;
+    }
+
+    .prefects-list-container {
+      width: 100%;
+      height: 470px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      overflow-y: auto;
+      background-color: white;
+      border-radius: 0 0 10px 10px;
+      scrollbar-width: none;
+
+      .prefect {
+        margin: 10px 20px;
+        max-height: 328px;
+
+        .prefect-name {
+          padding: 10px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.3rem;
+        }
+
+        figure {
+          border: 2px solid yellow;
+          border-radius: 5px;
+          filter: drop-shadow(2px 4px 3px hsla(0, 100%, 0%, 0.5));
+          object-fit: cover;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .number-of-votes-container {
+          position: relative;
+          top: -40px;
+          // left: 0px;
+          background-color: hsla(60, 100%, 50%, 0.8);
+          // width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 10px;
+          font-size: 1.1rem;
+          font-weight: bold;
+          border-radius: 0 0 5px 5px;
+
+          .votes {
+            font-size: inherit;
+            font-weight: inherit;
+          }
+
+          .votes-percent {
+            font-size: inherit;
+            font-weight: inherit;
+          }
+        }
+      }
+    }
+
+    // .back,
+    // .next {
+    //   position: absolute;
+    //   top: 0;
+    //   width: 450px;
+    //   height: 30px;
+    //   background-color: black;
+    //   color: white;
+    //   font-size: 1.4rem;
+    //   font-weight: bold;
+    //   transform: rotate(90deg);
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   padding: 10px;
+    // }
+  }
+}
+
 body {
   background-color: hsl(192, 100%, 99%);
+  // overflow: hidden;
 }
