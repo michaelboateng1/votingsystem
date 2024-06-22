@@ -19,72 +19,6 @@ const boysPrefects = {
       image: "/static/assets/images/fashion-man-person-1309052.jpg",
       attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
     },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
-    {
-      name: "Vicent Nkrumah",
-      number: 3,
-      image: "/static/assets/images/fashion-man-person-1309052.jpg",
-      attributes: { class: "boysSP", name: "boysPrefect", id: "schoolPrefectCartBoys" },
-    },
   ],
   compoundPrefects: [
     {
@@ -434,3 +368,21 @@ const girlsPrefects = {
 
 // SCHOOL LOGO IMAGE
 const logoImage = "/static/assets/images/logo/KSTS.png";
+
+// --RESULTS DATA
+const schoolPrefects = document.getElementById("schoolPrefects");
+// console.log();
+// console.log(document.getElementById("schoolPrefects").innerHTML);
+
+const boysData = {
+  schoolPrefects: [
+    {
+      name: schoolPrefects.firstElementChild.firstElementChild.textContent,
+      image: schoolPrefects.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.getAttribute("src"),
+      numberOfVotes: schoolPrefects.firstElementChild.lastElementChild.previousElementSibling.textContent,
+      votesPercentage: schoolPrefects.firstElementChild.lastElementChild.textContent,
+    },
+  ],
+};
+
+console.log(boysData);

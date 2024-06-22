@@ -58,3 +58,20 @@
 // nextResultsBtn[nextResultsBtn.length - 1].setAttribute("disabled", "");
 
 // console.log("h1");
+
+console.log("you're welcome");
+
+// VARIABLES
+const navigationBtns = document.querySelector(".navigation-btn");
+const prefectsListContainer = document.querySelector(".prefects-list-container");
+
+window.addEventListener("mousemove", (e) => {
+  if (e.y > 570 && e.y < 700) {
+    console.log(e.y);
+    prefectsListContainer.classList.add("decrease-prefects-list-container");
+    navigationBtns.classList.add("show-navigation-btns");
+  } else {
+    navigationBtns.classList.remove("show-navigation-btns");
+    prefectsListContainer.classList.remove("decrease-prefects-list-container");
+  }
+});
