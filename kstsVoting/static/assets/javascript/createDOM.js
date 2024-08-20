@@ -76,7 +76,8 @@ window.addEventListener("load", () => {
 
   // THIS WILL CALL nextCard FUNCTION IN 0.5s AND PASS IN THE TARGETED CARD
   const moveToNextCart = (card) => {
-    setTimeout(() => nextCard(card), 500);
+    setTimeout(() => nextCard(card), 73);
+    // nextCard(card)
   };
 
   /*

@@ -13,8 +13,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -45%);
-    transition: 0.5s ease-in-out;
-    opacity: 0;
+    transition: 2s ease-in-out;
+    // opacity: 0;
     @include mediaq(1440px) {
       width: 95vw;
     }
@@ -168,15 +168,6 @@
   }
 }
 
-.back {
-  margin-left: auto;
-  margin-right: 20px;
-  cursor: pointer !important;
-  visibility: hidden;
-  font-family: "Lemon", serif;
-  font-weight: bold;
-}
-
 .choosen-prefects {
   padding: 30px;
   overflow-x: hidden;
@@ -242,94 +233,6 @@
 //   background-color: orange;
 //   background: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(../../images/favicons/KSTS.png) center round fixed;
 // }
-
-// MODAL
-.modal-background {
-  position: absolute;
-  background-color: hsla(0, 0%, 0%, 0.6);
-  width: 100vw;
-  height: 100vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  display: none;
-
-  .modal-container {
-    background-color: $COLOR-WHITE;
-    padding: 0 10px 10px 10px;
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 30%;
-    animation: animateModal 0.5s ease-in-out;
-
-    .close-section {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      align-items: center;
-
-      div {
-        flex: 2 2 100px;
-      }
-
-      .close {
-        padding: 10px;
-        font-size: 1.5rem;
-        flex: 0 1 20px;
-
-        &:hover {
-          color: $COLOR-RED;
-          cursor: pointer;
-        }
-      }
-    }
-
-    .modal-text-container {
-      padding: 10px;
-      font-family: "Poppins", sans-serif;
-      p {
-        padding: 0 5px 15px 5px;
-        text-align: center;
-        font-size: 1.2rem;
-        font-family: inherit;
-      }
-    }
-  }
-
-  .not-vote {
-    width: 30%;
-    height: 20%;
-  }
-}
-
-@keyframes animateModal {
-  from {
-    transform: translate(-50%, -1000%);
-  }
-
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
-
-// LOADING
-.loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3000;
-  background-color: $PRIMARY-COLOR;
-}
 
 // transform: translate(-50%, -75%);
 // transform: translate(-50%, -1000%);

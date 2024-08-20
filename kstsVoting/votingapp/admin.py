@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School_prefects,Compound_prefects,Dinginhall_prefects,Library_prefects,Health_prefects,Protocol_prefects,Prep_prefects,Sports_prefects,Entertainment_prefects, Number_of_voters
+from .models import School_prefects,Compound_prefects,Dinginhall_prefects,Library_prefects,Health_prefects,Protocol_prefects,Prep_prefects,Sports_prefects,Entertainment_prefects, Number_of_voters, Rejected_votes
 
 # Register your models here.
 admin.site.register(School_prefects)
@@ -14,3 +14,6 @@ admin.site.register(Entertainment_prefects)
 
 # NUMBER OF VOTERS
 admin.site.register(Number_of_voters)
+
+# NUMABER OF REJECTED VOTES
+admin.site.register(Rejected_votes)

@@ -52,3 +52,7 @@ class Entertainment_prefects(models.Model):
 # TOTAL NUMER OF VOTERS
 class Number_of_voters(models.Model):
     voters     = models.IntegerField(default=0)
+
+# TOTAL NUMBER OF REJECTED VOTES
+class Rejected_votes(models.Model):
+    rejected_votes = models.IntegerField(default=0)

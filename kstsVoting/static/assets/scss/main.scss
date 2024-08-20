@@ -1,4 +1,6 @@
 @import "_config";
+@import "_utilities";
+@import "_loader";
 @import "_login";
 @import "_header";
 @import "_candidates";
@@ -17,7 +19,7 @@
 }
 
 ::selection {
-  background-color: $SELECTION-COLOR;
+  background-color: transparent;
   color: $COLOR-BLACK;
 }
 

@@ -49,6 +49,7 @@ boysPrefects.schoolPrefects.forEach((prefect) => {
   boysSP.nextElementSibling.firstElementChild.firstElementChild.innerHTML += `<li class="number-tab"><a href="#${nameId}">#${prefect.number}</a></li>`;
 });
 
+
 boysPrefects.compoundPrefects.forEach((prefect) => {
   const prefectName = prefect.name.split(" ");
   const firstName = prefectName[0].toLowerCase();
@@ -412,7 +413,7 @@ boysPreview.innerHTML = `
 <!-- Selected School Prefect (boy) -->
 <section class="prefect-review" id="schoolPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="schoolPrefectBoys">Boys Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -425,7 +426,7 @@ boysPreview.innerHTML = `
 <!-- Selected Compound Oversear (boy) -->
 <section class="prefect-review" id="compoundOversearBoy">
   <h3 class="prefect-position" data-portfolio-id="compoundOversearBoys">Compound Oversear</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -438,7 +439,7 @@ boysPreview.innerHTML = `
 <!-- Selected Dining Hall Prefect (boy) -->
 <section class="prefect-review" id="diningPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="dininghallBoys">Dining Hall Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -451,7 +452,7 @@ boysPreview.innerHTML = `
 <!-- Selected Library Prefect (boy) -->
 <section class="prefect-review" id="libraryPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="libraryBoys">Library Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -464,7 +465,7 @@ boysPreview.innerHTML = `
 <!-- Selected Health Prefect (boy) -->
 <section class="prefect-review" id="healthPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="healthBoys">Health Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -477,7 +478,7 @@ boysPreview.innerHTML = `
 <!-- Selected Protocol Prefect (boy) -->
 <section class="prefect-review" id="protocolPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="protocolBoys">Protocol Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -490,7 +491,7 @@ boysPreview.innerHTML = `
 <!-- Selected Prep Prefect (boy) -->
 <section class="prefect-review" id="prepPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="prepBoys">Prep Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -503,7 +504,7 @@ boysPreview.innerHTML = `
 <!-- Selected Sports Prefect (boy) -->
 <section class="prefect-review" id="sportsPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="sportsBoys">Sports Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -516,7 +517,7 @@ boysPreview.innerHTML = `
 <!-- Selected Entertainment Prefect (boy) -->
 <section class="prefect-review" id="entertainmentPrefectBoy">
   <h3 class="prefect-position" data-portfolio-id="entertainmentBoys">Entertainment Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review boys-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -531,7 +532,7 @@ girlsPreview.innerHTML = `
 <!-- Selected School Prefect (girl) -->
 <section class="prefect-review" id="schoolPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="schoolPrefectGirls">Girls Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -544,7 +545,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Compound Oversear (girl) -->
 <section class="prefect-review" id="compoundOversearGirl">
   <h3 class="prefect-position" data-portfolio-id="compoundoversearGirls">Compound Oversear</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -557,7 +558,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Dining Hall Prefect (girl) -->
 <section class="prefect-review" id="diningPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="dininghallGirls">Dining Hall Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -570,7 +571,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Library Prefect (girl) -->
 <section class="prefect-review" id="libraryPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="libraryGirls">Library Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -583,7 +584,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Health Prefect (girl) -->
 <section class="prefect-review" id="healthPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="healthGirls">Health Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -596,7 +597,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Protocol Prefect (girl) -->
 <section class="prefect-review" id="protocolPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="protocolGirls">Protocol Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -609,7 +610,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Prep Prefect (girl) -->
 <section class="prefect-review" id="prepPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="prepGirls">Prep Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -622,7 +623,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Sports Prefect (girl) -->
 <section class="prefect-review" id="sportsPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="sportsGirls">Sports Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>
@@ -635,7 +636,7 @@ girlsPreview.innerHTML = `
 <!-- Selected Entertainment Prefect (girl) -->
 <section class="prefect-review" id="entertainmentPrefectGirl">
   <h3 class="prefect-position" data-portfolio-id="entertainmentGirls">Entertainment Prefect</h3>
-  <div class="candidate-review">
+  <div class="candidate-review girls-review">
     <figure class="image">
       <img src="" alt="" />
     </figure>

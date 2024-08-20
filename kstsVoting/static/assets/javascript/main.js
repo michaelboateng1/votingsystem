@@ -3,10 +3,14 @@ const netxBtn = document.querySelectorAll(".next");
 const backBtn = document.querySelectorAll(".back");
 const lastNxtBtn = document.querySelector(".lastNextBtn");
 const lastBakBtn = document.querySelector(".lastBackBtn");
+// const submitBtn = document.querySelector(".submit");
+// const voteForm = document.querySelector(".candidates-form");
 const candidates = document.querySelectorAll(".candidate");
 const yearDisplay = document.querySelector(".year");
 const preview = Array.from(document.querySelectorAll(".prefect-position"));
 const previewBtn = document.querySelector(".previewBtn");
+// const reviewBoys = Array.from(document.querySelectorAll(".boys-review"));
+// const reviewGirls = Array.from(document.querySelectorAll(".grils-review"));
 const newDate = new Date();
 
 // MODAL VARIABLES
@@ -16,7 +20,11 @@ const modalTextContainer = document.querySelector(".modal-text-container");
 const modalContainer = document.querySelector(".modal-container");
 
 // HEADING AND DATE
-document.addEventListener("DOMContentLoaded", () => (yearDisplay.textContent = `KSTS 2023/${newDate.getFullYear()} PREFECTSHIP ELECTION`));
+document.addEventListener(
+  "DOMContentLoaded",
+  () =>
+    (yearDisplay.textContent = `KSTS 2023/${newDate.getFullYear()} PREFECTSHIP ELECTION`)
+);
 
 // PROGRESS BAR
 const progressBar = document.querySelector("#progress");
@@ -52,7 +60,9 @@ function progress(navigator) {
 
 // VOTING CARDS
 // THIS IS AN ARRAY OF ALL THE PREFECTSHIP CARDS
-const positionvotingCards = Array.from(document.querySelectorAll(".prefects-card"));
+const positionvotingCards = Array.from(
+  document.querySelectorAll(".prefects-card")
+);
 
 // EVENTLISTENERS
 // THIS TAKE YOU TO THE PREVIOUS CARD WHEN THE backBtn IS CLICKED
@@ -72,7 +82,11 @@ netxBtn.forEach((btn) => {
       progressBarWidth += 10;
       progress();
       console.log("last added", progressBarWidth);
-    } else if (targetParentElement.classList.contains("voted") && !targetParentElement.classList.contains("changed")) progress("next");
+    } else if (
+      targetParentElement.classList.contains("voted") &&
+      !targetParentElement.classList.contains("changed")
+    )
+      progress("next");
   });
 });
 
@@ -132,7 +146,7 @@ displayCard(acumlator);
 // DETERMINS WHICH CARD TO DISPLAY IF YOU'VE VOTED, ELSE SHOW A MESSAGE IF NOT VOTED WHEN THE netxBtn IS CLICKED
 function nextPosition(event) {
   if (!event.target.parentElement.parentElement.classList.contains("voted")) {
-    displayModal();
+    displayModal("<p>Sorry, you have to vote to continue.</p>");
   } else {
     /* give the first card a lower index  */
     hideCard(acumlator);
@@ -158,17 +172,26 @@ function next(card) {
   if (card !== undefined && card.classList.contains("last-card")) {
     progressBarWidth += 10;
     progress();
-  } else if (card !== undefined && !card.classList.contains("changed")) progress("next");
+  } else if (card !== undefined && !card.classList.contains("changed"))
+    progress("next");
 }
 
 // THIS SHOW THE PERCENTAGE OF PROGRESS WHEN PREFECT IS CHANGED AT PREVIEW
 function handleProgressBar(target) {
-  if (target !== undefined && target.dataset.section === "boys" && target.classList.contains("changed")) {
+  if (
+    target !== undefined &&
+    target.dataset.section === "boys" &&
+    target.classList.contains("changed")
+  ) {
     progressBarWidth = 40;
     progress();
     target.classList.remove("changed");
     console.log(target);
-  } else if (target !== undefined && target.dataset.section === "girls" && target.classList.contains("changed")) {
+  } else if (
+    target !== undefined &&
+    target.dataset.section === "girls" &&
+    target.classList.contains("changed")
+  ) {
     progressBarWidth = 95;
     progress();
     target.classList.remove("changed");
@@ -279,23 +302,26 @@ function disableBackBtn(index) {
   if (index === 0 || index === 10) {
     return;
   } else {
-    positionvotingCards[index].lastElementChild.lastElementChild.previousElementSibling.style.visibility = "hidden";
+    positionvotingCards[
+      index
+    ].lastElementChild.lastElementChild.previousElementSibling.style.visibility =
+      "hidden";
   }
 }
 
-// netxBtn ON THE PREVIEW CARD (it let the preview card to skip the check of voted attribute on the card)
+// ? netxBtn ON THE PREVIEW CARD (it let the preview card to skip the check of voted attribute on the card)
 previewBtn.addEventListener("click", () => {
   setTimeout(nextCard, 300);
   progress("next");
 });
 
 // *** MODAL DISPLAY
-function displayModal() {
+function displayModal(displayText) {
   document.removeEventListener("click", removeModal);
   close.removeEventListener("click", closeModal);
   modal.style.display = "block";
   modalContainer.classList.add("not-vote");
-  modalTextContainer.innerHTML = `<p>Sorry, you have to vote to continue.</p>`;
+  modalTextContainer.innerHTML = displayText;
   document.addEventListener("click", (e) => {
     removeModal(e);
   });

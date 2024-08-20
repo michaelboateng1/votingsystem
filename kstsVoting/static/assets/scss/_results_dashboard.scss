@@ -1,144 +1,3 @@
-// .prefects-card .candidates-resulst-wrapper {
-//   height: 400px;
-//   padding: 30px;
-//   background-color: $COLOR-WHITE;
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   grid-template-rows: auto;
-//   overflow-y: scroll;
-//   @include mediaq(1440px) {
-//     grid-template-columns: repeat(4, 1fr);
-//     height: 75vh;
-//   }
-
-//   .results-container {
-//     margin: 20px 20px;
-//     font-family: "Poppins", sans-serif;
-//     .image {
-//       border: 2px solid $BORDER-COLOR;
-//       img {
-//         width: 100%;
-//         height: 100%;
-//       }
-//     }
-
-//     .candidates-name {
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       padding: 10px;
-//       font-size: 1rem;
-//       border-left: 2px solid $BORDER-COLOR;
-//       border-right: 2px solid $BORDER-COLOR;
-//       border-top: 2px solid $BORDER-COLOR;
-//       background-color: $SECONDARY-COLOR;
-//       color: $COLOR-WHITE;
-//       border-radius: 5px 5px 0 0;
-//       font-family: inherit;
-//     }
-
-//     .results {
-//       display: flex;
-//       flex-flow: row nowrap;
-//       justify-content: space-around;
-//       align-items: center;
-//       //   padding: 10px;
-//       // border-top: 2px solid $BORDER-COLOR;
-//       border-bottom: 2px solid $BORDER-COLOR;
-//       border-left: 2px solid $BORDER-COLOR;
-//       border-right: 2px solid $BORDER-COLOR;
-//       background-color: $SECONDARY-COLOR;
-//       color: $COLOR-WHITE;
-//       border-radius: 0 0 5px 5px;
-//       //   margin: 0 20px;
-//       font-family: "Poppins", sans-serif;
-
-//       .votes {
-//         padding: 10px;
-//         font-weight: bold;
-//         font-family: inherit;
-//       }
-
-//       .percentage {
-//         border-left: 2px solid $BORDER-COLOR;
-//         padding: 10px 50px;
-//         font-family: inherit;
-//         font-weight: bold;
-//       }
-//     }
-//   }
-// }
-
-// .prefects-card .results-btns {
-//   padding: 10px;
-//   background: $COLOR-WHITE;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: center;
-//   border-radius: 0 0 5px 5px;
-//   border-top: 2px solid $SECONDARY-COLOR;
-
-//   .next-results,
-//   .back-results {
-//     padding: 10px 15px;
-//     border: none;
-//     border-radius: 2px;
-//     background-color: $SECONDARY-COLOR;
-//     color: $COLOR-WHITE;
-//     font-weight: bold;
-//     font-family: "Lemon", serif;
-//     font-weight: 300;
-//     cursor: pointer;
-//   }
-
-//   .next-results {
-//     margin-left: 20px;
-//   }
-
-//   .back-results:hover,
-//   .next-results:hover {
-//     filter: brightness(120%);
-//   }
-
-//   .back-results:active,
-//   .next-results:active {
-//     filter: brightness(100%);
-//   }
-// }
-
-// .voted-message {
-//   background-color: black;
-//   display: flex;
-//   flex-flow: column nowrap;
-//   justify-content: center;
-//   align-items: center;
-
-//   .voted-message_main {
-//     .voted-message_symbol {
-//       border: 2px solid gray;
-//       height: 100px;
-//       width: 100px;
-//       border-radius: 50%;
-//       font-size: 1rem;
-//       color: gray;
-//       padding: 10px;
-//     }
-
-//     .message {
-//       font-size: 2rem;
-//       color: gray;
-//       padding: 10px;
-//     }
-
-//     .voted-message_back {
-//       text-decoration: none;
-//       color: black;
-//       padding: 5px 10px;
-//       border: 1px solid #333;
-//     }
-//   }
-// }
-
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -153,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 36%;
+    width: 400px;
 
     .logo-wrapper {
       background-color: hsl(192, 100%, 99%);
@@ -183,31 +42,58 @@
       margin-left: auto;
       padding: 10px 20px;
       font-weight: normal;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &::after {
+        content: "Home>>";
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: yellow;
+      }
     }
   }
 
-  .view-results-btn {
-    border: 2px solid $COLOR-WHITE;
-    padding: 5px;
-    margin-right: 30px;
-    cursor: pointer;
+  .results-btns {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
 
-    button {
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 5px 10px;
-      border: none;
-      font-size: 1.1rem;
-      color: $SECONDARY-COLOR;
-      font-weight: 600;
-      cursor: inherit;
+    .view-results-btn {
+      border: 2px solid $COLOR-WHITE;
+      padding: 5px;
+      margin-right: 30px;
+      cursor: pointer;
       transition: 0.3s;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 1);
+        transform: scale(1.05);
       }
 
       &:active {
-        background-color: rgba(255, 255, 255, 0.7);
+        transform: scale(1);
+      }
+
+      button {
+        padding: 5px 10px;
+        border: none;
+        font-size: 1.1rem;
+        color: $SECONDARY-COLOR;
+        font-weight: 600;
+        cursor: inherit;
+        transition: inherit;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 1);
+          // transform: scale(1.1);
+        }
+
+        &:active {
+          background-color: rgba(255, 255, 255, 0.7);
+          // transform: scale(1);
+        }
       }
     }
   }
@@ -220,12 +106,12 @@
   align-items: center;
   height: calc(100vh - 85px - 50px);
   padding: 0 20px;
-  display: none;
+  // display: none;
   // background-color: green;
 
   .welcome-message {
     // background-color: hs
-    background-color: white;
+    // background-color: white;
     color: green;
     padding: 20px;
     height: 500px;
@@ -236,6 +122,12 @@
     align-items: center;
     filter: drop-shadow(0 0 2px hsla(0, 0%, 30%, 0.3));
     flex-shrink: 5;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 hsla(0, 0%, 30%, 0.3);
+    backdrop-filter: blur(15.5px);
+    -webkit-backdrop-filter: blur(15.5px);
 
     h2 {
       font-size: 1.5rem;
@@ -249,11 +141,12 @@
 
   .vote-info {
     height: 500px;
-    width: 700px;
+    width: 600px;
+    margin-left: 100px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
 
     .breadcrumb {
       // background-color: hsl(60, 82%, 94%);
@@ -261,17 +154,24 @@
       margin: 0 20px;
       filter: drop-shadow(0 0 2px hsla(0, 0%, 30%, 0.3));
       border-radius: 5px;
-      flex: 1 0;
+      flex: 1 0 219px;
+      transition: 0.5s;
+      cursor: default;
+
+      &:hover {
+        transform: translateY(-10px);
+        filter: drop-shadow(2px 4px 1px hsla(0, 0%, 30%, 0.3));
+      }
 
       .title {
         border-bottom: 1px solid hsla(0, 0%, 30%, 0.5);
 
         h3 {
           padding: 10px 20px;
-          font-size: 0.99rem;
+          font-size: 1.2rem;
           text-align: center;
           // text-transform: capitalize;
-          color: hsl(0, 0%, 20%);
+          color: #333333;
           font-weight: normal;
         }
       }
@@ -279,8 +179,9 @@
       .breadcrumb-content {
         padding: 20px 30px;
         text-align: center;
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: bold;
+        color: #333333;
       }
     }
   }
@@ -298,6 +199,7 @@
     width: 90vw;
     border-radius: 10px;
     position: relative;
+    display: none;
 
     .prefects-position {
       text-align: center;
@@ -338,10 +240,27 @@
           filter: drop-shadow(2px 4px 3px hsla(0, 100%, 0%, 0.5));
           object-fit: cover;
           overflow: hidden;
+          position: relative;
 
           img {
             width: 100%;
             height: 100%;
+          }
+
+          .position{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #212121;
+            color: white;
+            padding: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            // display: none;
+
+            background: hsla(0, 0%, 13%, 0.7);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           }
         }
 
@@ -359,6 +278,10 @@
           font-weight: bold;
           border-radius: 0 0 5px 5px;
 
+          background: hsla(60, 100%, 50%, 0.7);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+
           .votes {
             font-size: inherit;
             font-weight: inherit;
@@ -372,52 +295,50 @@
       }
     }
 
-    .navigation-btn {
-      width: 100%;
-      background-color: green;
-      padding: 5px;
-      border-radius: 0 0 4px 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform: translateY(5px);
-      transition: 0.5s ease-out;
-      opacity: 0;
-      position: absolute;
+      .navigation-btn {
+        width: 100%;
+        background-color: green;
+        padding: 5px;
+        border-radius: 0 0 4px 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(5px);
+        transition: 0.5s ease-out;
+        opacity: 0;
+        position: absolute;
 
-      .r-back,
-      .r-next {
-        padding: 5px 15px;
-        font-size: 1.2rem;
-        font-weight: bolder;
-        cursor: pointer;
-        border: none;
-        background-color: white;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        transition: 0.3s;
-
-        // &:hover {
-        //   background-color: white;
-        // }
-
-        &:active {
-          background-color: yellow;
+        .girls-back-btn,
+        .girls-next-btn,
+        .boys-back-btn,
+        .boys-next-btn {
+          padding: 5px 15px;
+          width: 10%;
+          font-size: 1.2rem;
+          font-weight: bolder;
+          cursor: pointer;
+          border: none;
+          background-color: white;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          transition: 0.3s;
+          
+          &:active {
+            background-color: yellow;
+          }
         }
       }
-
-      .r-back {
-        margin-right: 10px;
-      }
-
-      .r-next {
-        margin-left: 10px;
-      }
-    }
   }
 }
 
-body {
+.dashboard {
   background-color: hsl(192, 100%, 99%);
+  background: linear-gradient(
+    125deg,
+    white 25%,
+    rgba(103, 255, 136, 0.8) 10%,
+    hsl(192, 100%, 99%)
+  );
   overflow: hidden;
   height: 100vh;
 }
@@ -434,4 +355,12 @@ body {
 
 .prefects-results-data {
   display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
 }

@@ -4,6 +4,10 @@
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  min-width: 100%;
   .top-titles {
     text-align: center;
     background-color: $SECONDARY-COLOR;
@@ -47,6 +51,7 @@
       border-bottom: 1px solid $COLOR-BLACK;
       display: grid;
       align-content: center;
+      background-color: $COLOR-WHITE;
 
       .indicator {
         background-color: $YELLOW-COLOR;
@@ -112,5 +117,3 @@
     }
   }
 }
-
-

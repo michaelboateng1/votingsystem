@@ -8,16 +8,29 @@
     <title>KSTS Voting Platform</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="{% static '/assets/images/favicons/KSTS.png' %}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{% static '/assets/images/favicons/KSTS.png' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static '/assets/images/favicons/KSTS.png' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{% static '/assets/images/favicons/KSTS.png' %}"
+    />
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="{% static '/assets/dist/css/main.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/assets/dist/css/main.min.css' %}"
+    />
 
     <!-- GOOGLEFONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- FONTAWESOME -->
     <link
@@ -36,7 +49,11 @@
         <h3 class="offscreen">Candidates</h3>
         <section>
           <h3 class="offscreen">Vote for your candidate</h3>
-          <form action="{% url 'check_vote'%}" method="post" class="candidates-form">
+          <form
+            action="{% url 'check_vote'%}"
+            method="post"
+            class="candidates-form"
+          >
             {% csrf_token %}
             <!-- || SCHOOL PREFECT (Boys) -->
             <section class="prefects-card" data-section="boys">
@@ -65,7 +82,9 @@
                 </nav>
 
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -81,7 +100,9 @@
                 </nav>
 
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="compoundPrefectsNext">Next</button>
+                <button type="button" class="next" id="compoundPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -97,7 +118,9 @@
                 </nav>
 
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -129,7 +152,9 @@
                 </nav>
 
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -144,7 +169,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -159,7 +186,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -174,12 +203,17 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
             <!-- || PREVIEW VOTES (Boys) -->
-            <section class="preview-votes prefects-card voted" id="PreviewVotes">
+            <section
+              class="preview-votes prefects-card voted"
+              id="PreviewVotes"
+            >
               <h2 class="position-title">Preview Votes</h2>
 
               <div class="choosen-prefects boys-preview"></div>
@@ -202,7 +236,9 @@
                   <ul></ul>
                 </nav>
 
-                <button type="button" class="next" id="GirlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="GirlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -217,7 +253,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -233,7 +271,9 @@
                 </nav>
                 <button type="button" class="back">Back</button>
 
-                <button type="button" class="next" id="compoundPrefectsNext">Next</button>
+                <button type="button" class="next" id="compoundPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -248,7 +288,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -263,7 +305,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -278,7 +322,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -293,7 +339,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -308,7 +356,9 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back">Back</button>
-                <button type="button" class="next" id="girlsPrefectsNext">Next</button>
+                <button type="button" class="next" id="girlsPrefectsNext">
+                  Next
+                </button>
               </section>
             </section>
 
@@ -323,12 +373,21 @@
                   <ul></ul>
                 </nav>
                 <button type="button" class="back lastBackBtn">Back</button>
-                <button type="button" class="next lastNextBtn" id="girlsPrefectsNext">Next</button>
+                <button
+                  type="button"
+                  class="next lastNextBtn"
+                  id="girlsPrefectsNext"
+                >
+                  Next
+                </button>
               </section>
             </section>
 
             <!-- || PREVIEW VOTES (Girls) -->
-            <section class="preview-votes prefects-card last-preview" id="PreviewVotes">
+            <section
+              class="preview-votes prefects-card last-preview"
+              id="PreviewVotes"
+            >
               <h2 class="position-title">Preview Votes</h2>
 
               <div class="choosen-prefects girls-preview"></div>
@@ -336,7 +395,9 @@
               <div class="next-btn">
                 <button type="button" class="back">Back</button>
 
-                <button type="submit" class="submit" id="compoundPrefectsNext">Submit</button>
+                <button type="submit" class="submit" id="compoundPrefectsNext">
+                  Submit
+                </button>
               </div>
             </section>
           </form>
@@ -348,17 +409,23 @@
                 <div></div>
                 <span class="close">x</span>
               </div>
-              <div class="modal-text-container">
-                <p>Sorry, you have to vote to continue</p>
-              </div>
+              <div class="modal-text-container"></div>
             </div>
           </div>
         </section>
       </article>
     </main>
 
-    <!-- || LOADER -->
+    <!-- {LOADER} -->
     <div class="loading">
+      <div class="loading-animation">
+        <img
+          src="{% static '/assets/images/logo/KSTS.png' %}"
+          alt="Loader"
+          width="400"
+          height="400"
+        />
+      </div>
       <h3>LOADING...</h3>
     </div>
 

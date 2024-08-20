@@ -1,359 +1,591 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KSTS Voting Platform | Results Dashboard</title>
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="{% static '/assets/images/favicons/KSTS.png' %}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{% static '/assets/images/favicons/KSTS.png' %}" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KSTS Voting Platform | Dashboard</title>
 
-    <!-- STYLESHEET -->
-    <link rel="stylesheet" href="{% static '/assets/dist/css/main.min.css' %}" />
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="{% static '/assets/images/favicons/KSTS.png' %}" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{% static '/assets/images/favicons/KSTS.png' %}" />
 
-    <!-- GOOGLEFONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- STYLESHEET -->
+  <link rel="stylesheet" href="{% static '/assets/dist/css/main.min.css' %}" />
 
-    <!-- FONTAWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header class="dashboard-header">
-      <div class="headding-wrapper">
-        <div class="logo-wrapper">
-          <figure>
-            <img src="{% static '/assets/images/logo/KSTS.png' %}" alt="KSTS logo" width="400" height="400" />
-          </figure>
-        </div>
-        <h1>Results <span class="dashboard-link">Dashboard</span></h1>
+  <!-- GOOGLEFONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Teko:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- FONTAWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="headding-wrapper">
+      <div class="logo-wrapper">
+        <figure>
+          <img src="{% static '/assets/images/logo/KSTS.png' %}" alt="KSTS logo" width="400" height="400" />
+        </figure>
+      </div>
+      <h1>Results Dashboard</h1>
+    </div>
+
+    <div class="results-btns">
+      <div class="view-results-btn" id="boysResults">
+        <button type="button">Boys Results</button>
       </div>
 
-      <div class="view-results-btn">
-        <button type="button">View Results</button>
+      <div class="view-results-btn" id="girlsResults">
+        <button type="button">Girls Results</button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="dashboard-main">
-      <div class="summry">
-        <section class="welcome-message">
-          <h2>Welcome to the KSTS voting platform</h2>
-          <p>Results Dashboard</p>
-        </section>
-        <section class="vote-info">
-          <div class="breadcrumb">
-            <div class="title">
-              <h3>Total number of voters</h3>
-            </div>
-            <p class="breadcrumb-content">200/3000</p>
+  <main class="dashboard-main">
+    <div class="summry">
+      <section class="welcome-message">
+        <h2>Welcome to the KSTS voting platform</h2>
+        <p>Results Dashboard</p>
+      </section>
+      <section class="vote-info">
+        <div class="breadcrumb">
+          <div class="title">
+            <h3>Total number of voters</h3>
           </div>
-
-          <div class="breadcrumb">
-            <div class="title">
-              <h3>Number of rejected votes</h3>
-            </div>
-            <p class="breadcrumb-content">100</p>
-          </div>
-
-          <div class="breadcrumb">
-            <div class="title">
-              <h3>Total number of contestants</h3>
-            </div>
-            <p class="breadcrumb-content">19</p>
-          </div>
-
-          <div class="breadcrumb">
-            <div class="title">
-              <h3>Number of prefectship positions</h3>
-            </div>
-            <p class="breadcrumb-content">9</p>
-          </div>
-        </section>
-      </div>
-
-      <section class="results-display" id="resultsDisplay">
-        <h2 class="prefects-position">Boys Prefect</h2>
-
-        <div class="prefects-list-container">
-          <section class="prefect">
-            <div class="prefect-name" id="name">Andy Asamoah</div>
-            <figure>
-              <img src="{% static '/assets/images/city-love-people-532389.jpg' %}" alt="" width="200" height="200" />
-            </figure>
-            <div class="number-of-votes-container">
-              <p class="votes" id="votes">{{ Andy_Asamoah }} Votes</p>
-              <p class="votes-percent" id="votesPercent">{{Andy_Asamoah_p}}%</p>
-            </div>
-          </section>
-          <section class="prefect">
-            <div class="prefect-name" id="name">Andy Asamoah</div>
-            <figure>
-              <img src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}" alt="" width="200" height="200" />
-            </figure>
-            <div class="number-of-votes-container">
-              <p class="votes" id="votes">{{ Sampson_Gyampo }} Votes</p>
-              <p class="votes-percent" id="votesPercent">{{Sampson_Gyampo_p}}%</p>
-            </div>
-          </section>
-          <section class="prefect">
-            <div class="prefect-name" id="name">Andy Asamoah</div>
-            <figure>
-              <img src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}" alt="" width="200" height="200" />
-            </figure>
-            <div class="number-of-votes-container">
-              <p class="votes" id="votes">{{ Vicent_Nkrumah }} Votes</p>
-              <p class="votes-percent" id="votesPercent">{{Vicent_Nkrumah_p}}%</p>
-            </div>
-          </section>
-          <section class="prefect">
-            <div class="prefect-name" id="name">Andy Asamoah</div>
-            <figure>
-              <img src="{% static '/assets/images/city-love-people-532389.jpg' %}" alt="" width="200" height="200" />
-            </figure>
-            <div class="number-of-votes-container">
-              <p class="votes" id="votes">{{ Andy_Asamoah }} Votes</p>
-              <p class="votes-percent" id="votesPercent">{{Andy_Asamoah_p}}%</p>
-            </div>
-          </section>
+          <p class="breadcrumb-content">{{voters_number}}</p>
         </div>
 
-        <div class="navigation-btn">
-          <button type="button" class="r-back"><span><</span></button>
-          <button type="button" class="r-next"><span>></span></button>
+        <div class="breadcrumb">
+          <div class="title">
+            <h3>Number of rejected votes</h3>
+          </div>
+          <p class="breadcrumb-content">{{rejected_votes}}</p>
+        </div>
+
+        <div class="breadcrumb">
+          <div class="title">
+            <h3>Total number of prefects</h3>
+          </div>
+          <p class="breadcrumb-content">27</p>
+        </div>
+
+        <div class="breadcrumb">
+          <div class="title">
+            <h3>Number of positions</h3>
+          </div>
+          <p class="breadcrumb-content">9</p>
         </div>
       </section>
-    </main>
-
-    <!-- || PREFECTS DATA -->
-    <div class="prefects-results-data" id="boysData">
-      <ul id="schoolPrefects">
-        <li id="number1">
-          <div id="name">Andy Asamoah</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}" alt="Andy Asamoah" /></div>
-          <div id="numberOfVote">{{ Andy_Asamoah }} Votes</div>
-          <div id="votePercentage">{{Andy_Asamoah_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Sampson Gyampo</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}" alt="Sampson Gyampo" /></div>
-          <div id="numberOfVote">{{ Sampson_Gyampo }} Votes</div>
-          <div id="votePercentage">{{Sampson_Gyampo_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Vicent Nkrumah</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}" alt="Vicent Nkrumah" /></div>
-          <div id="numberOfVote">{{ Vicent_Nkrumah }} Votes</div>
-          <div id="votePercentage">{{Vicent_Nkrumah_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="compoundPrefects">
-        <li id="number1">
-          <div id="name">Michael Boateng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Michael Boateng" /></div>
-          <div id="numberOfVote">{{ Michael_Boateng }} Votes</div>
-          <div id="votePercentage">{{Michael_Boateng_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Bismark Boateng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Bismark Boateng" /></div>
-          <div id="numberOfVote">{{Bismark_Boateng}} Votes</div>
-          <div id="votePercentage">{{Bismark_Boateng_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Darrell Sefa</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Darrell Sefa" /></div>
-          <div id="numberOfVote">{{Darrell_Sefa}} Votes</div>
-          <div id="votePercentage">{{Darrell_Sefa_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="diningHallPrefects">
-        <li id="number1">
-          <div id="name">Henry Adofo</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}" alt="Henry Adofo" /></div>
-          <div id="numberOfVote">{{Henry_Adofo}} Votes</div>
-          <div id="votePercentage">{{Henry_Adofo_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Nana Owusu</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}" alt="Nana Owusu" /></div>
-          <div id="numberOfVote">{{Nana_Owusu}} Votes</div>
-          <div id="votePercentage">{{Nana_Owusu_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Kelvin Dasah</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}" alt="Kelvin Dasah" /></div>
-          <div id="numberOfVote">{{Kelvin_Dasah}} Votes</div>
-          <div id="votePercentage">{{Kelvin_Dasah_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="libraryPrefects">
-        <li id="number1">
-          <div id="name">Sena Adams</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Sena Adams" /></div>
-          <div id="numberOfVote">{{Sena_Adams}} Votes</div>
-          <div id="votePercentage">{{Sena_Adams_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Issah Aboagye</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Issah Aboagye" /></div>
-          <div id="numberOfVote">{{Issah_Aboagye}} Votes</div>
-          <div id="votePercentage">{{Issah_Aboagye_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Isaac Brogya</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Isaac Brogya" /></div>
-          <div id="numberOfVote">{{Isaac_Brogya}} Votes</div>
-          <div id="votePercentage">{{Isaac_Brogya_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="healthPrefects">
-        <li id="number1">
-          <div id="name">Bright Aheto</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Bright Aheto" /></div>
-          <div id="numberOfVote">{{Bright_Aheto}} Votes</div>
-          <div id="votePercentage">{{Bright_Aheto_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Huziaf Mahmud</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Huziaf Mahmud" /></div>
-          <div id="numberOfVote">{{Huziaf_Mahmud}} Votes</div>
-          <div id="votePercentage">{{Huziaf_Mahmud_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Nawe Kingsley</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Nawe Kingsley" /></div>
-          <div id="numberOfVote">{{Nawe_Kingsley}} Votes</div>
-          <div id="votePercentage">{{Nawe_Kingsley_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="protocolPrefects">
-        <li id="number1">
-          <div id="name">Muhammed Boateng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Muhammed Boateng" /></div>
-          <div id="numberOfVote">{{Muhammed_Boateng}} Votes</div>
-          <div id="votePercentage">{{Muhammed_Boateng_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Kumah Mensah</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Kumah Mensah" /></div>
-          <div id="numberOfVote">{{Kumah_Mensah}} Votes</div>
-          <div id="votePercentage">{{Kumah_Mensah_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Kwaku Adofo</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Kwaku Adofo" /></div>
-          <div id="numberOfVote">{{Kwaku_Adofo}} Votes</div>
-          <div id="votePercentage">{{Kwaku_Adofo_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="prepPrefects">
-        <li id="number1">
-          <div id="name">Kelvin Boateng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Kelvin Boateng" /></div>
-          <div id="numberOfVote">{{Kelvin_Boateng}} Votes</div>
-          <div id="votePercentage">{{Kelvin_Boateng_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Henry Agyemang</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Henry Agyemang" /></div>
-          <div id="numberOfVote">{{Henry_Agyemang}} Votes</div>
-          <div id="votePercentage">{{Henry_Agyemang_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Darrell Aboagye</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Darrell Aboagye" /></div>
-          <div id="numberOfVote">{{Darrell_Aboagye}} Votes</div>
-          <div id="votePercentage">{{Darrell_Aboagye_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="sportsPrefects">
-        <li id="number1">
-          <div id="name">Nana Boateng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Nana Boateng" /></div>
-          <div id="numberOfVote">{{Nana_Boateng}} Votes</div>
-          <div id="votePercentage">{{Nana_Boateng_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Anane Owusu</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Anane Owusu" /></div>
-          <div id="numberOfVote">{{Anane_Owusu}} Votes</div>
-          <div id="votePercentage">{{Anane_Owusu_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Gadossey Daniel</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Gadossey Daniel" /></div>
-          <div id="numberOfVote">{{Gadossey_Daniel}} Votes</div>
-          <div id="votePercentage">{{Gadossey_Daniel_p}}%</div>
-        </li>
-      </ul>
-
-      <ul id="entertainmentPrefects">
-        <li id="number1">
-          <div id="name">Emmanuel Agyemang</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Emmanuel Agyemang" /></div>
-          <div id="numberOfVote">{{Emmanuel_Agyemang}} Votes</div>
-          <div id="votePercentage">{{Emmanuel_Agyemang_p}}%</div>
-        </li>
-
-        <li id="number2">
-          <div id="name">Desmon Aseidu</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Desmon Aseidu" /></div>
-          <div id="numberOfVote">{{Desmon_Aseidu}} Votes</div>
-          <div id="votePercentage">{{Desmon_Aseidu_p}}%</div>
-        </li>
-
-        <li id="number3">
-          <div id="name">Michael Obeng</div>
-          <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Michael Obeng" /></div>
-          <div id="numberOfVote">{{Michael_Obeng}} Votes</div>
-          <div id="votePercentage">{{Michael_Obeng_p}}%</div>
-        </li>
-      </ul>
     </div>
 
-    <!-- {LOADER} -->
-    <div class="loading">
-      <h3>LOADING...</h3>
-    </div>
+    <section class="results-display" id="resultsDisplay">
+      <h2 class="prefects-position"></h2>
 
-    <!-- SCRIPT -->
-    <script src="{% static '/assets/javascript/loader.js' %}"></script>
-    <script src="{% static '/assets/javascript/data/data.js' %}"></script>
-    <script src="{% static '/assets/javascript/resultsDashboard.js' %}"></script>
-    <!-- <script src="{% static '/assets/javascript/resultspage.js' %}"></script> -->
-  </body>
+      <div class="prefects-list-container"></div>
+
+      <section class="navigation-btn"></section>
+    </section>
+  </main>
+
+  <!-- || PREFECTS DATA {BOYS} -->
+  <div class="prefects-results-data" id="boysData">
+    <ul id="boysSchoolPrefects">
+      <li id="number1">
+        <div id="name">Andy Asamoah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}"
+            alt="Andy Asamoah" /></div>
+        <div id="numberOfVote">{{ Andy_Asamoah }} Votes</div>
+        <div id="votePercentage">{{Andy_Asamoah_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Sampson Gyampo</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}"
+            alt="Sampson Gyampo" /></div>
+        <div id="numberOfVote">{{ Sampson_Gyampo }} Votes</div>
+        <div id="votePercentage">{{Sampson_Gyampo_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Vicent Nkrumah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}"
+            alt="Vicent Nkrumah" /></div>
+        <div id="numberOfVote">{{ Vicent_Nkrumah }} Votes</div>
+        <div id="votePercentage">{{Vicent_Nkrumah_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysCompoundPrefects">
+      <li id="number1">
+        <div id="name">Michael Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Michael Boateng" /></div>
+        <div id="numberOfVote">{{ Michael_Boateng }} Votes</div>
+        <div id="votePercentage">{{Michael_Boateng_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Bismark Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Bismark Boateng" /></div>
+        <div id="numberOfVote">{{Bismark_Boateng}} Votes</div>
+        <div id="votePercentage">{{Bismark_Boateng_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Darrell Sefa</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Darrell Sefa" /></div>
+        <div id="numberOfVote">{{Darrell_Sefa}} Votes</div>
+        <div id="votePercentage">{{Darrell_Sefa_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysDiningHallPrefects">
+      <li id="number1">
+        <div id="name">Henry Adofo</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}"
+            alt="Henry Adofo" /></div>
+        <div id="numberOfVote">{{Henry_Adofo}} Votes</div>
+        <div id="votePercentage">{{Henry_Adofo_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Nana Owusu</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}" alt="Nana Owusu" /></div>
+        <div id="numberOfVote">{{Nana_Owusu}} Votes</div>
+        <div id="votePercentage">{{Nana_Owusu_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Kelvin Dasah</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}" alt="Kelvin Dasah" /></div>
+        <div id="numberOfVote">{{Kelvin_Dasah}} Votes</div>
+        <div id="votePercentage">{{Kelvin_Dasah_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysLibraryPrefects">
+      <li id="number1">
+        <div id="name">Sena Adams</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Sena Adams" /></div>
+        <div id="numberOfVote">{{Sena_Adams}} Votes</div>
+        <div id="votePercentage">{{Sena_Adams_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Issah Aboagye</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Issah Aboagye" /></div>
+        <div id="numberOfVote">{{Issah_Aboagye}} Votes</div>
+        <div id="votePercentage">{{Issah_Aboagye_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Isaac Brogya</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Isaac Brogya" /></div>
+        <div id="numberOfVote">{{Isaac_Brogya}} Votes</div>
+        <div id="votePercentage">{{Isaac_Brogya_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysHealthPrefects">
+      <li id="number1">
+        <div id="name">Bright Aheto</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Bright Aheto" /></div>
+        <div id="numberOfVote">{{Bright_Aheto}} Votes</div>
+        <div id="votePercentage">{{Bright_Aheto_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Huziaf Mahmud</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Huziaf Mahmud" /></div>
+        <div id="numberOfVote">{{Huziaf_Mahmud}} Votes</div>
+        <div id="votePercentage">{{Huziaf_Mahmud_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Nawe Kingsley</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Nawe Kingsley" /></div>
+        <div id="numberOfVote">{{Nawe_Kingsley}} Votes</div>
+        <div id="votePercentage">{{Nawe_Kingsley_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysProtocolPrefects">
+      <li id="number1">
+        <div id="name">Muhammed Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Muhammed Boateng" /></div>
+        <div id="numberOfVote">{{Muhammed_Boateng}} Votes</div>
+        <div id="votePercentage">{{Muhammed_Boateng_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Kumah Mensah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Kumah Mensah" /></div>
+        <div id="numberOfVote">{{Kumah_Mensah}} Votes</div>
+        <div id="votePercentage">{{Kumah_Mensah_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Kwaku Adofo</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Kwaku Adofo" /></div>
+        <div id="numberOfVote">{{Kwaku_Adofo}} Votes</div>
+        <div id="votePercentage">{{Kwaku_Adofo_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysPrepPrefects">
+      <li id="number1">
+        <div id="name">Kelvin Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Kelvin Boateng" /></div>
+        <div id="numberOfVote">{{Kelvin_Boateng}} Votes</div>
+        <div id="votePercentage">{{Kelvin_Boateng_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Henry Agyemang</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Henry Agyemang" /></div>
+        <div id="numberOfVote">{{Henry_Agyemang}} Votes</div>
+        <div id="votePercentage">{{Henry_Agyemang_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Darrell Aboagye</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Darrell Aboagye" /></div>
+        <div id="numberOfVote">{{Darrell_Aboagye}} Votes</div>
+        <div id="votePercentage">{{Darrell_Aboagye_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysSportsPrefects">
+      <li id="number1">
+        <div id="name">Nana Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Nana Boateng" /></div>
+        <div id="numberOfVote">{{Nana_Boateng}} Votes</div>
+        <div id="votePercentage">{{Nana_Boateng_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Anane Owusu</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Anane Owusu" /></div>
+        <div id="numberOfVote">{{Anane_Owusu}} Votes</div>
+        <div id="votePercentage">{{Anane_Owusu_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Gadossey Daniel</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Gadossey Daniel" /></div>
+        <div id="numberOfVote">{{Gadossey_Daniel}} Votes</div>
+        <div id="votePercentage">{{Gadossey_Daniel_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="boysEntertainmentPrefects">
+      <li id="number1">
+        <div id="name">Emmanuel Agyemang</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Emmanuel Agyemang" /></div>
+        <div id="numberOfVote">{{Emmanuel_Agyemang}} Votes</div>
+        <div id="votePercentage">{{Emmanuel_Agyemang_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Desmon Aseidu</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Desmon Aseidu" /></div>
+        <div id="numberOfVote">{{Desmon_Aseidu}} Votes</div>
+        <div id="votePercentage">{{Desmon_Aseidu_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Michael Obeng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Michael Obeng" /></div>
+        <div id="numberOfVote">{{Michael_Obeng}} Votes</div>
+        <div id="votePercentage">{{Michael_Obeng_p}}%</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- || PREFECTS DATA {GIRLS} -->
+  <div class="prefects-results-data" id="girlsData">
+    <ul id="girlsSchoolPrefects">
+      <li id="number1">
+        <div id="name">Elizabeth Gemfuah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}"
+            alt="Elizabeth Gemfuah" /></div>
+        <div id="numberOfVote">{{Elizabeth_Gemfuah}} Votes</div>
+        <div id="votePercentage">{{Elizabeth_Gemfuah_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Mavis Agyemang</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}"
+            alt="Mavis Agyemang" /></div>
+        <div id="numberOfVote">{{Mavis_Agyemang}} Votes</div>
+        <div id="votePercentage">{{Mavis_Agyemang_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Judith Atiakoh</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}"
+            alt="Judith Atiakoh" /></div>
+        <div id="numberOfVote">{{Judith_Atiakoh}} Votes</div>
+        <div id="votePercentage">{{Judith_Atiakoh_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsCompoundPrefects">
+      <li id="number1">
+        <div id="name">Abigirl Bonsu</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Abigirl Bonsu" /></div>
+        <div id="numberOfVote">{{Abigirl_Bonsu}} Votes</div>
+        <div id="votePercentage">{{Abigirl_Bonsu_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Priscilla Abu</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Priscilla Abu" /></div>
+        <div id="numberOfVote">{{Priscilla_Abu}} Votes</div>
+        <div id="votePercentage">{{Priscilla_Abu_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Qeenster Sarpong</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Qeenster Sarpong" /></div>
+        <div id="numberOfVote">{{Qeenster_Sarpong}} Votes</div>
+        <div id="votePercentage">{{Qeenster_Sarpong_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsDiningHallPrefects">
+      <li id="number1">
+        <div id="name">Juliet Annien</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}"
+            alt="Juliet Annien" /></div>
+        <div id="numberOfVote">{{Juliet_Annien}} Votes</div>
+        <div id="votePercentage">{{Juliet_Annien_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Saly White</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}" alt="Saly White" /></div>
+        <div id="numberOfVote">{{Saly_White}} Votes</div>
+        <div id="votePercentage">{{Saly_White_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Emmanuella Boateng</div>
+        <div id="image"><img width="200" height="200"
+            src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}" alt="Emmanuella Boateng" /></div>
+        <div id="numberOfVote">{{Emmanuella_Boateng}} Votes</div>
+        <div id="votePercentage">{{Emmanuella_Boateng_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsLibraryPrefects">
+      <li id="number1">
+        <div id="name">Blessing Kwakye</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Blessing Kwakye" /></div>
+        <div id="numberOfVote">{{Blessing_Kwakye}} Votes</div>
+        <div id="votePercentage">{{Blessing_Kwakye_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Annima Agyei Asanti</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Annima Agyei Asanti" /></div>
+        <div id="numberOfVote">{{Annima_Agyei_Asanti}} Votes</div>
+        <div id="votePercentage">{{Annima_Agyei_Asanti_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Nancy Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Nancy Boateng" /></div>
+        <div id="numberOfVote">{{Nancy_Boateng}} Votes</div>
+        <div id="votePercentage">{{Nancy_Boateng_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsHealthPrefects">
+      <li id="number1">
+        <div id="name">Juliet Achampong</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Juliet Achampong" /></div>
+        <div id="numberOfVote">{{Juliet_Achampong}} Votes</div>
+        <div id="votePercentage">{{Juliet_Achampong_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Princess Ofori</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Princess Ofori" /></div>
+        <div id="numberOfVote">{{Princess_Ofori}} Votes</div>
+        <div id="votePercentage">{{Princess_Ofori_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Prudence Oti</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Prudence Oti" /></div>
+        <div id="numberOfVote">{{Prudence_Oti}} Votes</div>
+        <div id="votePercentage">{{Prudence_Oti_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsProtocolPrefects">
+      <li id="number1">
+        <div id="name">Elizabeth Asamoah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Elizabeth Asamoah" /></div>
+        <div id="numberOfVote">{{Elizabeth_Asamoah}} Votes</div>
+        <div id="votePercentage">{{Elizabeth_Asamoah_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Precious Nkrumah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Precious Nkrumah" /></div>
+        <div id="numberOfVote">{{Precious_Nkrumah}} Votes</div>
+        <div id="votePercentage">{{Precious_Nkrumah_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Olivia Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Olivia Boateng" /></div>
+        <div id="numberOfVote">{{Olivia_Boateng}} Votes</div>
+        <div id="votePercentage">{{Olivia_Boateng_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsPrepPrefects">
+      <li id="number1">
+        <div id="name">Magret Asanti</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Magret Asanti" /></div>
+        <div id="numberOfVote">{{Magret_Asanti}} Votes</div>
+        <div id="votePercentage">{{Magret_Asanti_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Elizabeth Antwiwaa</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Elizabeth Antwiwaa" /></div>
+        <div id="numberOfVote">{{Elizabeth_Antwiwaa}} Votes</div>
+        <div id="votePercentage">{{Elizabeth_Antwiwaa_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Gifty Afriyei</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Gifty Afriyei" /></div>
+        <div id="numberOfVote">{{Gifty_Afriyei}} Votes</div>
+        <div id="votePercentage">{{Gifty_Afriyei_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsSportsPrefects">
+      <li id="number1">
+        <div id="name">Candybel Ofori</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Candybel Ofori" /></div>
+        <div id="numberOfVote">{{Candybel_Ofori}} Votes</div>
+        <div id="votePercentage">{{Candybel_Ofori_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Christiana Asare</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Christiana Asare" /></div>
+        <div id="numberOfVote">{{Christiana_Asare}} Votes</div>
+        <div id="votePercentage">{{Christiana_Asare_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Cindy Agyei</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Cindy Agyei" /></div>
+        <div id="numberOfVote">{{Cindy_Agyei}} Votes</div>
+        <div id="votePercentage">{{Cindy_Agyei_p}}%</div>
+      </li>
+    </ul>
+
+    <ul id="girlsEntertainmentPrefects">
+      <li id="number1">
+        <div id="name">Yvon Boateng</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+            alt="Yvon Boateng" /></div>
+        <div id="numberOfVote">{{Yvon_Boateng}} Votes</div>
+        <div id="votePercentage">{{Yvon_Boateng_p}}%</div>
+      </li>
+
+      <li id="number2">
+        <div id="name">Emmanuella Aboagey</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+            alt="Emmanuella Aboagey" /></div>
+        <div id="numberOfVote">{{Emmanuella_Aboagey}} Votes</div>
+        <div id="votePercentage">{{Emmanuella_Aboagey_p}}%</div>
+      </li>
+
+      <li id="number3">
+        <div id="name">Magret Yeboah</div>
+        <div id="image"><img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+            alt="Magret Yeboah" /></div>
+        <div id="numberOfVote">{{Magret_Yeboah}} Votes</div>
+        <div id="votePercentage">{{Magret_Yeboah_p}}%</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- {LOADER} -->
+  <div class="loading">
+    <div class="loading-animation">
+      <img src="{% static '/assets/images/logo/KSTS.png' %}" alt="Loader" width="400" height="400" />
+    </div>
+    <h3>LOADING...</h3>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="{% static '/assets/javascript/loader.js' %}"></script>
+  <script src="{% static '/assets/javascript/data/data.js' %}"></script>
+  <script src="{% static '/assets/javascript/resultsDashboard.js' %}"></script>
+  <!-- <script src="{% static '/assets/javascript/resultspage.js' %}"></script> -->
+</body>
+
 </html>
 
 {% comment %}
@@ -382,7 +614,8 @@
                 <h3>Andy Asamoah</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}" alt="Andy Asamoah" />
+                <img width="200" height="200" src="{% static '/assets/images/city-love-people-532389.jpg' %}"
+                  alt="Andy Asamoah" />
               </figure>
               <div class="results">
                 <p class="votes">{{ Andy_Asamoah }} Votes</p>
@@ -396,7 +629,8 @@
                 <h3>Sampson Gyampo</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}" alt="Sampson Gyampo" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1205693.jpg' %}"
+                  alt="Sampson Gyampo" />
               </figure>
 
               <div class="results">
@@ -411,7 +645,8 @@
                 <h3>Vicent Nkrumah</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}" alt="Vicent Nkrumah" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-1309052.jpg' %}"
+                  alt="Vicent Nkrumah" />
               </figure>
 
               <div class="results">
@@ -437,7 +672,8 @@
                 <h3>Michael Boateng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Michael Boateng" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Michael Boateng" />
               </figure>
 
               <div class="results">
@@ -452,7 +688,8 @@
                 <h3>Bismark Boateng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Bismark Boateng" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Bismark Boateng" />
               </figure>
 
               <div class="results">
@@ -467,7 +704,8 @@
                 <h3>Darrell Sefa</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Darrell Sefa" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Darrell Sefa" />
               </figure>
 
               <div class="results">
@@ -494,7 +732,9 @@
                 <h3>Henry Adofo</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}" alt="Henry Adofo" />
+                <img width="200" height="200"
+                  src="{% static '/assets/images/guardians_of_the_galaxy_star_lord-wallpaper-1920x1080.jpg' %}"
+                  alt="Henry Adofo" />
               </figure>
 
               <div class="results">
@@ -509,7 +749,8 @@
                 <h3>Nana Owusu</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}" alt="Nana Owusu" />
+                <img width="200" height="200" src="{% static '/assets/images/edge_of_tomorrow_2014-wallp.jpg' %}"
+                  alt="Nana Owusu" />
               </figure>
 
               <div class="results">
@@ -524,7 +765,8 @@
                 <h3>Kelvin Dasah</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}" alt="Kelvin Dasah" />
+                <img width="200" height="200" src="{% static '/assets/images/2013_thor_2_the_dark_world-.jpg' %}"
+                  alt="Kelvin Dasah" />
               </figure>
 
               <div class="results">
@@ -552,7 +794,8 @@
                 <h3>Sena Adams</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Sena Adams" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Sena Adams" />
               </figure>
 
               <div class="results">
@@ -567,7 +810,8 @@
                 <h3>Issah Aboagye</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Issah Aboagye" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Issah Aboagye" />
               </figure>
 
               <div class="results">
@@ -582,7 +826,8 @@
                 <h3>Isaac Brogya</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Isaac Brogya" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Isaac Brogya" />
               </figure>
 
               <div class="results">
@@ -609,7 +854,8 @@
                 <h3>Bright Aheto</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Bright Aheto" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Bright Aheto" />
               </figure>
 
               <div class="results">
@@ -624,7 +870,8 @@
                 <h3>Huziaf Mahmud</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Huziaf Mahmud" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Huziaf Mahmud" />
               </figure>
 
               <div class="results">
@@ -639,7 +886,8 @@
                 <h3>Nawe Kingsley</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Nawe Kingsley" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Nawe Kingsley" />
               </figure>
 
               <div class="results">
@@ -666,7 +914,8 @@
                 <h3>Muhammed Boateng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Muhammed Boateng" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Muhammed Boateng" />
               </figure>
 
               <div class="results">
@@ -681,7 +930,8 @@
                 <h3>Kumah Mensah</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Kumah Mensah" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Kumah Mensah" />
               </figure>
 
               <div class="results">
@@ -696,7 +946,8 @@
                 <h3>Kwaku Adofo</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Kwaku Adofo" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Kwaku Adofo" />
               </figure>
 
               <div class="results">
@@ -723,7 +974,8 @@
                 <h3>Kelvin Boateng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Kelvin Boateng" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Kelvin Boateng" />
               </figure>
 
               <div class="results">
@@ -738,7 +990,8 @@
                 <h3>Henry Agyemang</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Henry Agyemang" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Henry Agyemang" />
               </figure>
 
               <div class="results">
@@ -753,7 +1006,8 @@
                 <h3>Darrell Aboagye</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Darrell Aboagye" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Darrell Aboagye" />
               </figure>
 
               <div class="results">
@@ -780,7 +1034,8 @@
                 <h3>Nana Boateng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Nana Boateng" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Nana Boateng" />
               </figure>
 
               <div class="results">
@@ -795,7 +1050,8 @@
                 <h3>Anane Owusu</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Anane Owusu" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Anane Owusu" />
               </figure>
 
               <div class="results">
@@ -810,7 +1066,8 @@
                 <h3>Gadossey Daniel</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Gadossey Daniel" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Gadossey Daniel" />
               </figure>
 
               <div class="results">
@@ -837,7 +1094,8 @@
                 <h3>Emmanuel Agyemang</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}" alt="Emmanuel Agyemang" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-man-person-387.jpg' %}"
+                  alt="Emmanuel Agyemang" />
               </figure>
 
               <div class="results">
@@ -852,7 +1110,8 @@
                 <h3>Desmon Aseidu</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}" alt="Desmon Aseidu" />
+                <img width="200" height="200" src="{% static '/assets/images/fashion-woman-model-859058.jpg' %}"
+                  alt="Desmon Aseidu" />
               </figure>
 
               <div class="results">
@@ -867,7 +1126,8 @@
                 <h3>Michael Obeng</h3>
               </div>
               <figure class="image">
-                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}" alt="Michael Obeng" />
+                <img width="200" height="200" src="{% static '/assets/images/food-man-person-243057.jpg' %}"
+                  alt="Michael Obeng" />
               </figure>
 
               <div class="results">
