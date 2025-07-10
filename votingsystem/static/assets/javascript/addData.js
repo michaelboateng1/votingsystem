@@ -20,8 +20,6 @@ const girlsPRP = document.getElementById("girlsPRP");
 const girlsSTP = document.getElementById("girlsSTP");
 const girlsEP = document.getElementById("girlsEP");
 
-const STATIC_URL = "https://votingsystem-static.onrender.com/";
-
 // HEADER TITLE
 const header = document.getElementById("header");
 
@@ -38,7 +36,7 @@ boysPrefects.schoolPrefects.forEach((prefect) => {
 
   boysSP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -59,7 +57,7 @@ boysPrefects.compoundPrefects.forEach((prefect) => {
 
   boysCO.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -80,7 +78,7 @@ boysPrefects.diningHallPrefects.forEach((prefect) => {
 
   boysDH.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -101,7 +99,7 @@ boysPrefects.libraryPrefects.forEach((prefect) => {
 
   boysLI.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -122,7 +120,7 @@ boysPrefects.healthPrefects.forEach((prefect) => {
 
   boysHP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -143,7 +141,7 @@ boysPrefects.protocolPrefects.forEach((prefect) => {
 
   boysPP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -164,7 +162,7 @@ boysPrefects.prepPrefects.forEach((prefect) => {
 
   boysPRP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -185,7 +183,7 @@ boysPrefects.sportsPrefects.forEach((prefect) => {
 
   boysSTP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -206,7 +204,7 @@ boysPrefects.entertainmentPrefects.forEach((prefect) => {
 
   boysEP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -228,7 +226,7 @@ girlsPrefects.schoolPrefects.forEach((prefect) => {
 
   girlsSP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -249,7 +247,7 @@ girlsPrefects.compoundPrefects.forEach((prefect) => {
 
   girlsCO.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -270,7 +268,7 @@ girlsPrefects.diningHallPrefects.forEach((prefect) => {
 
   girlsDH.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -291,7 +289,7 @@ girlsPrefects.libraryPrefects.forEach((prefect) => {
 
   girlsLI.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -312,7 +310,7 @@ girlsPrefects.healthPrefects.forEach((prefect) => {
 
   girlsHP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -333,7 +331,7 @@ girlsPrefects.protocolPrefects.forEach((prefect) => {
 
   girlsPP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -354,7 +352,7 @@ girlsPrefects.prepPrefects.forEach((prefect) => {
 
   girlsPRP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -375,7 +373,7 @@ girlsPrefects.sportsPrefects.forEach((prefect) => {
 
   girlsSTP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
@@ -396,7 +394,7 @@ girlsPrefects.entertainmentPrefects.forEach((prefect) => {
 
   girlsEP.innerHTML += `<section class="candidate ${prefect.attributes.class}" id="${nameId}">
     <figure class="image">
-      <img src="${STATIC_URL}${prefect.image}" alt="${prefect.name}" />
+      <img src="${prefect.image}" alt="${prefect.name}" />
     </figure>
     <div class="candidate-name">
       <h3>${prefect.name}</h3>
