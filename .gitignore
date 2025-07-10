@@ -8,9 +8,10 @@ venv/
 *.pyo
 *.pyd
 __pycache__/
+**/__pycache__
 
 # Database files
-db.sqlite3
+
 
 # Media and static files
 /media/
@@ -19,4 +20,4 @@ db.sqlite3
 # Other
 *.log
 *.tmp
-/
+.DS_Store
