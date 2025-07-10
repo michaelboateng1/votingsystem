@@ -20,6 +20,8 @@ const girlsPRP = document.getElementById("girlsPRP");
 const girlsSTP = document.getElementById("girlsSTP");
 const girlsEP = document.getElementById("girlsEP");
 
+// const STATIC_URL = "https://votingsystem-static.onrender.com/";
+
 // HEADER TITLE
 const header = document.getElementById("header");
 
@@ -48,7 +50,6 @@ boysPrefects.schoolPrefects.forEach((prefect) => {
 
   boysSP.nextElementSibling.firstElementChild.firstElementChild.innerHTML += `<li class="number-tab"><a href="#${nameId}">#${prefect.number}</a></li>`;
 });
-
 
 boysPrefects.compoundPrefects.forEach((prefect) => {
   const prefectName = prefect.name.split(" ");
