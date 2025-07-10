@@ -22,8 +22,6 @@ window.addEventListener("load", () => {
   const entertainmentPrefectGirl = document.querySelector("#entertainmentPrefectGirl");
   const libraryPrefectGirl = document.querySelector("#libraryPrefectGirl");
 
-  const STATIC_URL = "https://votingsystem-static.onrender.com/";
-
   // PREFECTS CARTYGORY VARIABLES (Boys)
   const schoolPrefectsCartBoys = document.querySelectorAll("#schoolPrefectCartBoys");
   const compoundPrefectsCartBoys = document.querySelectorAll("#compoundPrefectCartBoys");
@@ -53,7 +51,7 @@ window.addEventListener("load", () => {
   */
   function choosenPrefect(prefect, el) {
     /* SET THE CANDIDATES SRC LINK */
-    prefect.lastElementChild.firstElementChild.firstElementChild.setAttribute("src", `${STATIC_URL}${el.parentElement.previousElementSibling.firstElementChild.getAttribute("src")}`);
+    prefect.lastElementChild.firstElementChild.firstElementChild.setAttribute("src", `${el.parentElement.previousElementSibling.firstElementChild.getAttribute("src")}`);
 
     /* SET THE CANDIDATES ALT */
     prefect.lastElementChild.firstElementChild.firstElementChild.setAttribute("alt", `${el.previousElementSibling.textContent}`);
