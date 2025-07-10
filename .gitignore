@@ -8,9 +8,11 @@ venv/
 *.pyo
 *.pyd
 __pycache__/
+**/__pycache__
 
 # Database files
-db.sqlite3
+# I didn't include the current database I'll include it later
+# db.sqlite3
 
 # Media and static files
 /media/
