@@ -11,8 +11,7 @@ __pycache__/
 **/__pycache__
 
 # Database files
-# I didn't include the current database I'll include it later
-# db.sqlite3
+
 
 # Media and static files
 /media/
@@ -21,4 +20,4 @@ __pycache__/
 # Other
 *.log
 *.tmp
-/
+.DS_Store
